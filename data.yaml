@@ -1,0 +1,6 @@
+path: ./data
+train: DATA_CLEAN/train.txt
+val: DATA_CLEAN/val.txt
+test: DATA_CLEAN/test.txt
+names:
+  0: cat

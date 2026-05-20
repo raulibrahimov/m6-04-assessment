@@ -1,0 +1,19 @@
+data/
+DATA_CLEAN/
+DATA_CLEAN */
+*.pt
+
+# Ignore all training-run artefacts EXCEPT the best checkpoint, which the
+# submission checklist requires. A file cannot be re-included unless every
+# parent directory is also re-included, hence the step-by-step un-ignore chain.
+runs/*
+!runs/cats_v1/
+runs/cats_v1/*
+!runs/cats_v1/weights/
+runs/cats_v1/weights/*
+!runs/cats_v1/weights/best.pt
+
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+*.pyc
