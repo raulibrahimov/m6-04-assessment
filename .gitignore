@@ -12,6 +12,11 @@ runs/cats_v1/*
 !runs/cats_v1/weights/
 runs/cats_v1/weights/*
 !runs/cats_v1/weights/best.pt
+!runs/cats_v2/
+runs/cats_v2/*
+!runs/cats_v2/weights/
+runs/cats_v2/weights/*
+!runs/cats_v2/weights/best.pt
 
 .ipynb_checkpoints/
 __pycache__/

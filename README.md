@@ -223,6 +223,26 @@ Paste a link to your Pull Request in the Student Portal.
 | Code quality & communication | 10% | Clean notebook, markdown explanations, reproducible repo |
 | Reflection | 5% | Specific, honest, looking forward to Week 2 |
 
+## Extension — Task 7: Hard-Negative Augmentation
+
+The base `cats_v1` model is trained only on cats, so it has no concept of "not a
+cat" and fires confident false positives on visually similar animals — dogs
+especially. **Task 7** in the notebook fixes this without adding a new class:
+
+- 300 dog images are streamed from the Stanford Dogs dataset (250 used for
+  training, 50 held out as an unseen false-positive test).
+- The 250 training dogs get **empty label files**, so YOLO treats them as
+  *background* images — teaching the detector that a dog is not a cat.
+- `data_aug.yaml` is identical to `data.yaml` except `train` points at
+  `train_aug.txt` (cat train split + the 250 dog negatives). `val`/`test` are
+  unchanged, so all cat metrics stay comparable.
+- The model is retrained with the same hyperparameters as `cats_v1`, producing
+  `runs/cats_v2/weights/best.pt`.
+
+This stays a single-class cat detector — it just makes far fewer mistakes on
+non-cats. Reproduce by running the notebook top-to-bottom; the Task 7 cells are
+idempotent (they skip the download and training if the artefacts already exist).
+
 ## Looking Ahead
 
 Next week you'll keep working with this **same dataset** and the **same YOLO26 family**. You'll:
