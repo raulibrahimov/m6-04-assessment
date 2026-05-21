@@ -1,0 +1,9 @@
+.DS_Store
+
+# Large image dataset — not stored in git
+data/
+DATA_CLEAN/
+DATA_CLEAN 2/
+DATA_CLEAN 3/
+DATA_CLEAN 4/
+DATA_CLEAN 5/

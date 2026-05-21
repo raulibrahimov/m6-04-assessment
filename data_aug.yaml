@@ -1,0 +1,7 @@
+# cat task identical to data.yaml; train split adds 250 dog background images
+path: ./data
+train: DATA_CLEAN/train_aug.txt
+val: DATA_CLEAN/val.txt
+test: DATA_CLEAN/test.txt
+names:
+  0: cat
